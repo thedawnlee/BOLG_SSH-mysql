@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+    <package name="struts" extends="struts-default">
+        <!--loginAciton_login.action-->
+        <action name="loginAciton_*" class="loginAction" method="{1}">
+
+            <result name="login">/mgr_login.jsp</result>
+            <result name="success" type="redirect">/mgr_index.jsp</result>
+            <result name="login_out" type="redirect">/mgr_login.jsp</result>
+            <allowed-methods>login,loginout</allowed-methods>
+
+        </action>
+
+        <!--分类Action-->
+        <action name="category_*" class="categoryAction" method="{1}">
+            <result name="list">/mgr_category.jsp</result>
+
+            <result name="listAction" type="redirectAction">category_list.action</result>
+
+        <allowed-methods>add,list,updateUI,update,delete</allowed-methods>
+
+        </action>
+
+        <action name="article_*" class="articleAction" method="{1}">
+            <result name="list">/mgr_main.jsp</result>
+            <result name="delete" type="redirectAction">article_pageList.action</result>
+            <allowed-methods>list,pageList,delete</allowed-methods>
+
+        </action>
+    </package>
+
+</struts>

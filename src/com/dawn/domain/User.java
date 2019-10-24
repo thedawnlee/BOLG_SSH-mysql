@@ -20,4 +20,13 @@ public class User {
                 '}';
     }
 
+
+    public static void main(String[] args) {
+        User lst = new User();
+        User lst2 =new User();
+
+        System.out.println(lst==lst2);
+        System.out.println(lst.equals(lst2));
+
+    }
 }
